@@ -1,0 +1,18 @@
+---
+import KeywordsGenerator from "../components/react/KeywordsGenerator";
+import Layout from "../layouts/Layout.astro";
+export function getStaticPaths() {
+  return [
+    {params: {dog: 'clifford'}},
+    {params: {dog: 'rover'}},
+    {params: {dog: 'spot'}},
+  ];
+}
+
+const { dog } = Astro.params;
+---
+
+<Layout title="Welcome to Astro.", keywordsSEO="Herramienta para generar palabras claves">
+    <br/>
+    <KeywordsGenerator/>
+</Layout>
